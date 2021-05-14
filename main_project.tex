@@ -10,7 +10,7 @@
 \usepackage{todonotes}
 
 \newcommand{\Yohan}[1]{\todo[inline,backgroundcolor=green]{YC: #1}}
-\newcommand{\Marc}[1]{\todo[inline,backgroundcolor=bl]{YC: #1}}
+\newcommand{\Marc}[1]{\todo[inline,backgroundcolor=cyan]{MC: #1}}
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 \begin{document}
@@ -23,19 +23,11 @@
 Department of Computer Science and Software Engineering\\
 Concordia University, Montreal, Canada\\
 first.last@concordia.ca}
-% unsure if what names I should put on the paper.
-%\and
-%\IEEEauthorblockN{2\textsuperscript{nd} Given Name Surname}
-%\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
-%\textit{name of organization (of Aff.)}\\
-%City, Country \\
-%email address or ORCID}
-
 
 \maketitle
 
 \begin{abstract}
-    Randoms forests are widely used for classification and regression tasks in machine learning, but lacks delayed labelling and distributability in low power and low memory environments. The Mondrian forest, a variant of random forests based on Mondrian processes, attempts to solves these issues. However, its current implementations suffers from a still too large memory footprint for its intended use: connected devices.  This issue can largely be attributed to the use of double precision for the node bounds.  Focusing on the use case of Human Activity Recognition, we explore reduced floating-point representations of the OrpailleCC implementation of the Mondrian forest to find realistic memory reductions without significant loss in F1 score. Results show the memory occupied by tree nodes can be reduced from 64 bits to 8 bits with same or better (4\%) F1 score. Moreover, an alternative instrumentation reducing all double precision floating-point numbers from 64 bits to 9-10 bits improves significantly and consistently the F1 score, up to an \Yohan{is it true? Wasn't it due to a bug?} improvement of 81.3\% on the Recofit dataset. 
+    Randoms forests are widely used for classification and regression tasks in machine learning, but lacks delayed labelling and distributability in low power and low memory environments. The Mondrian forest, a variant of random forests based on Mondrian processes, attempts to solves these issues. However, its current implementations suffers from a still too large memory footprint for its intended use: connected devices.  This issue can largely be attributed to the use of double precision for the node bounds.  Focusing on the use case of Human Activity Recognition, we explore reduced floating-point representations of the OrpailleCC implementation of the Mondrian forest to find realistic memory reductions without significant loss in F1 score. Results show the memory occupied by tree nodes can be reduced from 64 bits to 8 bits with same F1 score. Moreover, an alternative instrumentation reducing all double precision floating-point numbers from 64 bits to 8 bits improves significantly and consistently the F1 score, up to an \Yohan{is it true? Wasn't it due to a bug?} \Marc{It seems to have stayed the same. I am still checking some results for whole.} improvement of 81.3\% on the Recofit dataset. 
     Thus, reducing the memory footprint of Mondrian forests is possible and can even improve the results of the current implementation. 
     Further research is needed to determine if precision tuning can be an efficient part of hyperparameter search for more machine learning models similar to the Mondrian forest.
 \end{abstract}
